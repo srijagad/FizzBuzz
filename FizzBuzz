@@ -1,0 +1,50 @@
+
+using System;
+
+namespace FizzBuzz
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Get the input from the user.
+            Console.WriteLine("Enter a list of numbers, separated by commas: ");
+            string input = Console.ReadLine();
+
+            string[] numbers = input.Split(',');
+            foreach (string number in numbers)
+            {
+                int num;
+                if (!int.TryParse(number, out num))
+                {
+                    Console.WriteLine("Invalid item: {0}", number);
+                    continue;
+                }
+
+               
+                else if (num % 3 == 0 && num % 5 != 0)
+                {
+                    Console.WriteLine("Fizz");
+                }
+                else if (num % 5 == 0 && num % 3 != 0)
+                    {
+                      
+                        Console.WriteLine("Buzz");
+                    }
+                else if(num % 3 == 0 && num % 5 == 0)
+                    {
+                        
+                        Console.WriteLine("FizzBuzz");
+                    }
+                
+                else
+                {
+                    
+                    Console.WriteLine("Divide "+num+"by 3");
+                    Console.WriteLine("Divide "+num+"by 5");
+                }
+            }
+        }
+    }
+}   
+
